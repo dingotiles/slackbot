@@ -107,11 +107,11 @@ func plainResp(w http.ResponseWriter, msg string) {
 }
 
 func getSlackToken(robot string) string {
-	return os.Getenv(fmt.Sprintf("%s_SLACK_TOKEN", strings.ToUpper(robot)))
+	return os.Getenv(fmt.Sprintf("%s_SLACK_TOKEN", strings.Replace(strings.ToUpper(robot), "-", "_", -1)))
 }
 
 func getOutToken(teamDomain string) string {
-	return os.Getenv(fmt.Sprintf("%s_OUT_TOKEN", strings.ToUpper(teamDomain)))
+	return os.Getenv(fmt.Sprintf("%s_OUT_TOKEN", strings.Replace(strings.ToUpper(teamDomain), "-", "_", -1)))
 }
 
 func startServer() {
