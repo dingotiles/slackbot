@@ -43,7 +43,7 @@ func hookHandler(w http.ResponseWriter, r *http.Request) {
 
 	robots := getRobots(command.Robot)
 	if len(robots) == 0 {
-		jsonResp(w, "No robot for that command yet :(")
+		complainAboutNonBotMessages(w, command.Robot, command.Text, command.UserName)
 		return
 	}
 	resp := ""
@@ -79,7 +79,7 @@ func slashCommandHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	robots := getRobots(command.Robot)
 	if len(robots) == 0 {
-		plainResp(w, "No robot for that command yet :(")
+		complainAboutNonBotMessages(w, command.Robot, command.Text, command.UserName)
 		return
 	}
 	resp := ""
@@ -112,6 +112,15 @@ func getSlackToken(robot string) string {
 
 func getOutToken(teamDomain string) string {
 	return os.Getenv(fmt.Sprintf("%s_OUT_TOKEN", strings.ToUpper(teamDomain)))
+}
+
+func complainAboutNonBotMessages(w http.ResponseWriter, robot, text, user string) {
+	if os.Getenv("IGNORE_NON_BOT_MESSAGES") == "" {
+		jsonResp(w, "No robot for that command yet :(")
+	} else {
+		message := strings.Join([]string{robot, text}, " ")
+		log.Printf("Ignoring non-bot message: '%s' from %s", message, user)
+	}
 }
 
 func startServer() {
