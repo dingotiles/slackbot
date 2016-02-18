@@ -8,8 +8,8 @@ import (
 	"os"
 	"strings"
 
+	_ "github.com/dingotiles/slackbot/importer"
 	"github.com/gorilla/schema"
-	_ "github.com/trinchan/slackbot/importer"
 	"github.com/trinchan/slackbot/robots"
 )
 
