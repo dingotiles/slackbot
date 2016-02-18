@@ -5,8 +5,3 @@ applications:
   instances: 1
   host: slackbot
   domain: dingotiles.com
-  env:
-    DINGOTILES_ASKFORHELP_IN_URL=https://hooks.slack.com/services/XXX/YYY/ZZZ
-    DOWNLOAD_SLACK_TOKEN=
-    AWS_ACCESS_KEY=
-    AWS_SECRET_KEY=
