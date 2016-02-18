@@ -2,6 +2,8 @@
 
 This is the source code for the `dingobot` in our http://slack.dingotiles.com/ outback land of Support & Sales help.
 
+In any channel type `/download`:
+
 ![](http://cl.ly/3y0b3a113n0L/download/Image%202016-02-18%20at%203.08.48%20pm.png)
 
 ## Deployment
