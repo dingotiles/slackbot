@@ -23,7 +23,7 @@ func init() {
 
 func (r bot) Run(p *robots.Payload) (slashCommandImmediateReturn string) {
 	go r.DeferredAction(p)
-	return ""
+	return "Rolling..."
 }
 
 func (r bot) DeferredAction(p *robots.Payload) {
