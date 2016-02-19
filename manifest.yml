@@ -5,3 +5,4 @@ applications:
   instances: 1
   host: slackbot
   domain: dingotiles.com
+  buildpack: go_buildpack

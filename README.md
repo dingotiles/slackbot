@@ -11,6 +11,7 @@ In any channel type `/download`:
 ```
 cf push --no-start
 cf set-env slackbot DOWNLOAD_SLACK_TOKEN token
+cf set-env slackbot DOWNLOADRC_SLACK_TOKEN token
 cf set-env slackbot DINGOTILES_ASKFORHELP_IN_URL https://hooks.slack.com/services/xxx/yyy/zzz
 cf set-env slackbot AWS_ACCESS_KEY access
 cf set-env slackbot AWS_SECRET_KEY secret
