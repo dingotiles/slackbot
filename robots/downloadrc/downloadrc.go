@@ -27,7 +27,7 @@ func (r bot) Run(p *robots.Payload) string {
 	go r.DeferredAction(p)
 	// The string returned here will be shown only to the user who executed the command
 	// and will show up as a message from slackbot.
-	return "Wisened old dingos are building a URL just for you for the latest **internal** Dingo S3 release-candidate tile."
+	return "Wisened old dingos are building a URL just for you for the latest internal Dingo S3 release-candidate tile."
 }
 
 func (r bot) DeferredAction(p *robots.Payload) {
@@ -55,7 +55,7 @@ func (r bot) DeferredAction(p *robots.Payload) {
 		Domain:      p.TeamDomain,
 		Channel:     p.ChannelID,
 		Username:    "dingobot",
-		Text:        fmt.Sprintf("Download **internal** %s v%s tile at %s", productName, version, url),
+		Text:        fmt.Sprintf("Download *internal* %s v%s tile at %s", productName, version, url),
 		IconEmoji:   ":dingo:",
 		UnfurlLinks: false,
 		Parse:       robots.ParseStyleFull,
