@@ -72,6 +72,18 @@ func (r bot) DeferredAction(p *robots.Payload) {
 		Parse:       robots.ParseStyleFull,
 	}
 	webbookResponse.Send()
+
+	salesResponse := &robots.IncomingWebhook{
+		Domain:      p.TeamDomain,
+		Channel:     "G0N9JP199", // #sales-announcements channel ID
+		Username:    "dingobot",
+		Text:        fmt.Sprintf("Product %s v%s was requested by @%s in channel @%s", productName, version, p.UserName, p.ChannelName),
+		IconEmoji:   ":dingo:",
+		UnfurlLinks: false,
+		Parse:       robots.ParseStyleFull,
+	}
+	salesResponse.Send()
+
 }
 
 func (r bot) Description() string {
