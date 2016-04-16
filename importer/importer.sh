@@ -4,8 +4,8 @@ touch $1
 robots=(
     "github.com/dingotiles/slackbot/robots/downloads3"
     "github.com/dingotiles/slackbot/robots/downloads3rc"
-    "github.com/dingotiles/slackbot/robots/downloadpg"
-    "github.com/dingotiles/slackbot/robots/downloadpgrc"
+    "github.com/dingotiles/slackbot/robots/downloadpostgresql"
+    "github.com/dingotiles/slackbot/robots/downloadpostgresqlrc"
 )
 
 echo "package importer
