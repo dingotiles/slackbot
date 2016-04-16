@@ -2,8 +2,8 @@
 touch $1
 > $1
 robots=(
-    "github.com/dingotiles/slackbot/robots/download"
-    "github.com/dingotiles/slackbot/robots/downloadrc"
+    "github.com/dingotiles/slackbot/robots/downloads3"
+    "github.com/dingotiles/slackbot/robots/downloads3rc"
     # "github.com/trinchan/slackbot/robots/decide"
     # "github.com/trinchan/slackbot/robots/bijin"
     # "github.com/trinchan/slackbot/robots/nihongo"

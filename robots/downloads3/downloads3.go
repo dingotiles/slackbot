@@ -1,4 +1,4 @@
-package downloadrc
+package downloads3
 
 import (
 	"fmt"
@@ -17,7 +17,7 @@ type bot struct{}
 // Registers the bot with the server for command /test.
 func init() {
 	r := &bot{}
-	robots.RegisterRobot("downloadrc", r)
+	robots.RegisterRobot("download-s3", r)
 }
 
 // All Robots must implement a Run command to be executed when the registered command is received.
@@ -27,7 +27,7 @@ func (r bot) Run(p *robots.Payload) string {
 	go r.DeferredAction(p)
 	// The string returned here will be shown only to the user who executed the command
 	// and will show up as a message from slackbot.
-	return "Wisened old dingos are building a URL just for you for the latest internal Dingo S3 release-candidate tile."
+	return "Baby dingos are building a URL just for you for the latest Dingo S3 tile."
 }
 
 func (r bot) DeferredAction(p *robots.Payload) {
@@ -55,23 +55,35 @@ func (r bot) DeferredAction(p *robots.Payload) {
 		Domain:      p.TeamDomain,
 		Channel:     p.ChannelID,
 		Username:    "dingobot",
-		Text:        fmt.Sprintf("Download *internal* %s v%s tile at %s", productName, version, url),
+		Text:        fmt.Sprintf("Download %s v%s tile at %s", productName, version, url),
 		IconEmoji:   ":dingo:",
 		UnfurlLinks: false,
 		Parse:       robots.ParseStyleFull,
 	}
 	response.Send(p)
 
+	webbookResponse := &robots.IncomingWebhook{
+		Domain:      p.TeamDomain,
+		Channel:     p.ChannelID,
+		Username:    "dingobot",
+		Text:        fmt.Sprintf("Another happy %s v%s tile sent on its way to a new home! (via `/download`)", productName, version),
+		IconEmoji:   ":dingo:",
+		UnfurlLinks: false,
+		Parse:       robots.ParseStyleFull,
+	}
+	webbookResponse.Send()
+
 	salesResponse := &robots.IncomingWebhook{
 		Domain:      p.TeamDomain,
 		Channel:     "G0N9JP199", // #sales-announcements channel ID
 		Username:    "dingobot",
-		Text:        fmt.Sprintf("*Pre-release* product %s v%s was requested by @%s in channel @%s", productName, version, p.UserName, p.ChannelName),
+		Text:        fmt.Sprintf("Product %s v%s was requested by @%s in channel @%s", productName, version, p.UserName, p.ChannelName),
 		IconEmoji:   ":dingo:",
 		UnfurlLinks: false,
 		Parse:       robots.ParseStyleFull,
 	}
 	salesResponse.Send()
+
 }
 
 func (r bot) Description() string {
@@ -87,7 +99,7 @@ func (r bot) awsBucket(productLabel string) (bucket *s3.Bucket, err error) {
 		return
 	}
 	client := s3.New(auth, aws.APSoutheast)
-	bucket = client.Bucket(fmt.Sprintf("%s-pivotaltile", productLabel))
+	bucket = client.Bucket(fmt.Sprintf("%s-public-pivotaltile", productLabel))
 	return
 }
 
