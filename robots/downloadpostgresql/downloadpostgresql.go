@@ -66,7 +66,7 @@ func (r bot) DeferredAction(p *robots.Payload) {
 		Domain:      p.TeamDomain,
 		Channel:     p.ChannelID,
 		Username:    "dingobot",
-		Text:        fmt.Sprintf("Another happy %s v%s tile sent on its way to a new home! (via `/download`)", productName, version),
+		Text:        fmt.Sprintf("Another happy %s v%s tile sent on its way to a new home! (via `/download-postgresql`)", productName, version),
 		IconEmoji:   ":dingo:",
 		UnfurlLinks: false,
 		Parse:       robots.ParseStyleFull,
