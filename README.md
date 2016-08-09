@@ -18,6 +18,7 @@ cf set-env slackbot DOWNLOAD_S3_SLACK_TOKEN token1
 cf set-env slackbot DOWNLOAD_S3_RC_SLACK_TOKEN token2
 cf set-env slackbot DOWNLOAD_POSTGRESQL_SLACK_TOKEN token3
 cf set-env slackbot DOWNLOAD_POSTGRESQL_RC_SLACK_TOKEN token4
+cf set-env slackbot DOWNLOAD_SECRETS_SLACK_TOKEN token5
 cf set-env slackbot DINGOTILES_ASKFORHELP_IN_URL https://hooks.slack.com/services/xxx/yyy/zzz
 cf set-env slackbot AWS_ACCESS_KEY access
 cf set-env slackbot AWS_SECRET_KEY secret
