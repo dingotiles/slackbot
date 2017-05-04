@@ -5,7 +5,7 @@ robots=(
     "github.com/dingotiles/slackbot/robots/downloads3"
     "github.com/dingotiles/slackbot/robots/downloads3rc"
     "github.com/dingotiles/slackbot/robots/downloadkafka"
-    "github.com/dingotiles/slackbot/robots/downloadkafka"
+    "github.com/dingotiles/slackbot/robots/downloadkafkarc"
     "github.com/dingotiles/slackbot/robots/downloadredis"
     "github.com/dingotiles/slackbot/robots/downloadpostgresql"
     "github.com/dingotiles/slackbot/robots/downloadpostgresqlrc"

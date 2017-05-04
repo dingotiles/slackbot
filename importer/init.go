@@ -2,7 +2,7 @@ package importer
 
 import (
 	_ "github.com/dingotiles/slackbot/robots/downloadkafka"        // automatically generated import to register bot, do not change
-	_ "github.com/dingotiles/slackbot/robots/downloadkafka"        // automatically generated import to register bot, do not change
+	_ "github.com/dingotiles/slackbot/robots/downloadkafkarc"      // automatically generated import to register bot, do not change
 	_ "github.com/dingotiles/slackbot/robots/downloadpostgresql"   // automatically generated import to register bot, do not change
 	_ "github.com/dingotiles/slackbot/robots/downloadpostgresqlrc" // automatically generated import to register bot, do not change
 	_ "github.com/dingotiles/slackbot/robots/downloadprometheus"   // automatically generated import to register bot, do not change
