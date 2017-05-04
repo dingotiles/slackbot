@@ -10,6 +10,8 @@ robots=(
     "github.com/dingotiles/slackbot/robots/downloadpostgresql"
     "github.com/dingotiles/slackbot/robots/downloadpostgresqlrc"
     "github.com/dingotiles/slackbot/robots/downloadsecrets"
+    "github.com/dingotiles/slackbot/robots/downloadshield"
+    "github.com/dingotiles/slackbot/robots/downloadshieldrc"
 )
 
 echo "package importer
