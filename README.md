@@ -8,7 +8,7 @@ In any channel type `/download`:
 
 ## Configuration of Slack commands
 
-See https://dingotiles-askforhelp.slack.com/apps/manage/A0F82E8CA-slash-commands
+See https://dingotiles-askforhelp.slack.com/apps/A0F82E8CA-slash-commands
 
 ## Deployment
 
