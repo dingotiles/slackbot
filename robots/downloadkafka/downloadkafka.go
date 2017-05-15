@@ -60,7 +60,9 @@ func (r bot) DeferredAction(p *robots.Payload) {
 		UnfurlLinks: false,
 		Parse:       robots.ParseStyleFull,
 	}
-	response.Send(p)
+	if err := response.Send(p); err != nil {
+		r.sendErrorResponse(p, err)
+	}
 
 	webbookResponse := &robots.IncomingWebhook{
 		Domain:      p.TeamDomain,
@@ -71,7 +73,9 @@ func (r bot) DeferredAction(p *robots.Payload) {
 		UnfurlLinks: false,
 		Parse:       robots.ParseStyleFull,
 	}
-	webbookResponse.Send()
+	if err := webbookResponse.Send(); err != nil {
+		r.sendErrorResponse(p, err)
+	}
 
 	salesResponse := &robots.IncomingWebhook{
 		Domain:      p.TeamDomain,
@@ -82,8 +86,9 @@ func (r bot) DeferredAction(p *robots.Payload) {
 		UnfurlLinks: false,
 		Parse:       robots.ParseStyleFull,
 	}
-	salesResponse.Send()
-
+	if err := salesResponse.Send(); err != nil {
+		r.sendErrorResponse(p, err)
+	}
 }
 
 func (r bot) Description() string {
