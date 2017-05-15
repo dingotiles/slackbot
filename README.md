@@ -27,7 +27,7 @@ cf set-env slackbot DOWNLOAD_REDIS_RC_SLACK_TOKEN token10
 cf set-env slackbot DOWNLOAD_SECRETS_SLACK_TOKEN token11
 cf set-env slackbot DOWNLOAD_SHIELD_SLACK_TOKEN token12
 cf set-env slackbot DOWNLOAD_SHIELD_RC_SLACK_TOKEN token13
-cf set-env slackbot DINGOTILES_ASKFORHELP_IN_URL https://hooks.slack.com/services/xxx/yyy/zzz
+cf set-env slackbot DINGOTILES-ASKFORHELP_IN_URL  https://hooks.slack.com/services/xxx/yyy/zzz
 cf set-env slackbot AWS_ACCESS_KEY access
 cf set-env slackbot AWS_SECRET_KEY secret
 cf restart slackbot
