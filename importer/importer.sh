@@ -4,6 +4,8 @@ touch $1
 robots=(
     "github.com/dingotiles/slackbot/robots/downloads3"
     "github.com/dingotiles/slackbot/robots/downloads3rc"
+    "github.com/dingotiles/slackbot/robots/downloadhaproxy"
+    "github.com/dingotiles/slackbot/robots/downloadhaproxyrc"
     "github.com/dingotiles/slackbot/robots/downloadkafka"
     "github.com/dingotiles/slackbot/robots/downloadkafkarc"
     "github.com/dingotiles/slackbot/robots/downloadredis"

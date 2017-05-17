@@ -1,6 +1,8 @@
 package importer
 
 import (
+	_ "github.com/dingotiles/slackbot/robots/downloadhaproxy"      // automatically generated import to register bot, do not change
+	_ "github.com/dingotiles/slackbot/robots/downloadhaproxyrc"    // automatically generated import to register bot, do not change
 	_ "github.com/dingotiles/slackbot/robots/downloadkafka"        // automatically generated import to register bot, do not change
 	_ "github.com/dingotiles/slackbot/robots/downloadkafkarc"      // automatically generated import to register bot, do not change
 	_ "github.com/dingotiles/slackbot/robots/downloadpostgresql"   // automatically generated import to register bot, do not change
