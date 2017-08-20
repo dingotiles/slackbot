@@ -40,12 +40,13 @@ func (r bot) DeferredAction(p *robots.Payload) {
 
 	productName := "Stark & Wayne SHIELD"
 	productLabel := "starkandwayne-shield"
-	version, err := r.lookupLatestTileVersion(productLabel)
+	bucketPrefix := "dingo-shield"
+	version, err := r.lookupLatestTileVersion(bucketPrefix, productLabel)
 	if err != nil {
 		r.sendErrorResponse(p, err)
 		return
 	}
-	url, err := r.generateTempURL(productLabel, version)
+	url, err := r.generateTempURL(bucketPrefix, productLabel, version)
 	if err != nil {
 		r.sendErrorResponse(p, err)
 		return
@@ -98,18 +99,18 @@ func (r bot) Description() string {
 	return "Fetch URL to download latest Stark & Wayne SHIELD tile."
 }
 
-func (r bot) awsBucket(productLabel string) (bucket *s3.Bucket, err error) {
+func (r bot) awsBucket(bucketPrefix string) (bucket *s3.Bucket, err error) {
 	auth, err := aws.EnvAuth()
 	if err != nil {
 		return
 	}
 	client := s3.New(auth, aws.APSoutheast)
-	bucket = client.Bucket(fmt.Sprintf("%s-public-pivotaltile", productLabel))
+	bucket = client.Bucket(fmt.Sprintf("%s-public-pivotaltile", bucketPrefix))
 	return
 }
 
-func (r bot) lookupLatestTileVersion(productLabel string) (productVersion string, err error) {
-	bucket, err := r.awsBucket(productLabel)
+func (r bot) lookupLatestTileVersion(bucketPrefix, productLabel string) (productVersion string, err error) {
+	bucket, err := r.awsBucket(bucketPrefix)
 	if err != nil {
 		return
 	}
@@ -141,8 +142,8 @@ func (r bot) lookupLatestTileVersion(productLabel string) (productVersion string
 	return latestVersion.String(), nil
 }
 
-func (r bot) generateTempURL(productLabel, version string) (url string, err error) {
-	bucket, err := r.awsBucket(productLabel)
+func (r bot) generateTempURL(bucketPrefix, productLabel, version string) (url string, err error) {
+	bucket, err := r.awsBucket(bucketPrefix)
 	if err != nil {
 		return
 	}
