@@ -38,8 +38,8 @@ func (r bot) DeferredAction(p *robots.Payload) {
 	// Alternatively, you can make a SlashCommandResponse, with the same fields, and call
 	// reponse.Send(p)
 
-	productName := "Dingo Kafka"
-	productLabel := "dingo-kafka"
+	productName := "Stark & Wayne Kafka"
+	productLabel := "starkandwayne-kafka"
 	version, err := r.lookupLatestTileVersion(productLabel)
 	if err != nil {
 		r.sendErrorResponse(p, err)
@@ -95,7 +95,7 @@ func (r bot) Description() string {
 	// In addition to a Run method, each Robot must implement a Description method which
 	// is just a simple string describing what the Robot does. This is used in the included
 	// /c command which gives users a list of commands and descriptions
-	return "Fetch URL to download latest Dingo Kafka tile."
+	return "Fetch URL to download latest Stark & Wayne Kafka tile."
 }
 
 func (r bot) awsBucket(productLabel string) (bucket *s3.Bucket, err error) {
