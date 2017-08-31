@@ -40,7 +40,7 @@ func (r bot) DeferredAction(p *robots.Payload) {
 
 	productName := "Stark & Wayne SHIELD"
 	productLabel := "starkandwayne-shield"
-	bucketPrefix := "dingo-shield"
+	bucketPrefix := "starkandwayne-shield"
 	version, err := r.lookupLatestTileVersion(bucketPrefix, productLabel)
 	if err != nil {
 		r.sendErrorResponse(p, err)

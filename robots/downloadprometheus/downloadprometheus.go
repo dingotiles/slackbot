@@ -39,8 +39,8 @@ func (r bot) DeferredAction(p *robots.Payload) {
 	// reponse.Send(p)
 
 	productName := "Stark & Wayne Prometheus"
-	productLabel := "dingo-prometheus" // TODO "starkandwayne-prometheus"
-	bucketPrefix := "dingo-prometheus"
+	productLabel := "starkandwayne-prometheus"
+	bucketPrefix := "starkandwayne-prometheus"
 	version, err := r.lookupLatestTileVersion(bucketPrefix, productLabel)
 	if err != nil {
 		r.sendErrorResponse(p, err)
